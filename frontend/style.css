@@ -1,0 +1,72 @@
+/* 消除瀏覽器預設的間距 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif !important;
+}
+
+/* 設定整個網頁共用的設定 */
+body {
+    background-color: #ebf1ef; /* 背景顏色 */
+    color: #333; /* 主要文字顏色 */
+    line-height: 1.6;
+}
+
+/*********************************************************/
+/* 登入介面 */
+div.login_page{
+    width: 100%;       
+    height: 100%;   
+    display: flex;
+    justify-content: center; /* 水平 */
+    align-items: center;     /* 垂直 */
+    min-height: 100vh;       /* 確保畫布跟視窗一樣大 */
+    margin: 0;
+}
+
+div.login_box{
+    width : 200px;
+    height : 240px;
+    background-color: #dcebe6;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px; /* 倒圓角 */
+}
+
+div.login_box h3{
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-bottom: 20px;     /* 下方留白 */
+    font-size: 24px;
+}
+
+div.login_input_group{
+    margin-bottom: 15px;
+}
+
+div.login_input_group label{
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
+div.login_input_group input{
+    width: 60%;
+}
+
+div.login_button_group{
+    display: flex;
+    justify-content: space-between; /* 依然維持一左一右 */
+    padding: 0 10px 15px 10px; 
+    width: 100%;
+    margin-top: auto; /* 確保在 login_box 底部 */
+}
+
+div.login_button_group button {
+    cursor: pointer;
+    padding: 5px 5px;
+    border-radius: 8px; /* 倒圓角 */
+}
+
+/*********************************************************/

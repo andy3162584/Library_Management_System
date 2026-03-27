@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang = "zh-TW">
+
+    <!-- 告訴瀏覽器的資訊 -->
+    <head>
+        <title>Bobok</title>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
+        <meta name="author" content="Chen Bo An">
+        <meta name="description" content="個人圖書管理系統">
+    </head>
+
+    <!-- 呈現在網頁上的資訊 -->
+    <body>
+        <!-- 網頁樣式 -->
+        <div class="login_page">
+            <div class="login_box">
+                <h3>Bobok</h3>
+
+                <div class="login_input_group">
+                    <label>帳號：</label>
+                    <input type="text" name="username">
+                </div>
+
+                <div class="login_input_group">
+                    <label>密碼：</label>
+                    <input type="password" name="password">
+                </div>
+
+                <div class="login_button_group">
+                    <div id="btn_login_left">
+                        <button>忘記密碼/註冊</button>
+                    </div>
+                    <div id="btn_login_right">
+                        <button>登入</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 網頁功能 -->
+        <script>
+            const loginBtn = document.querySelector('div#btn_login_right button');
+
+            if (loginBtn) {
+                loginBtn.addEventListener('click', function() {
+                    alert('偵測到點擊！正在驗證帳號...');
+                });
+            }
+        </script>
+    </body>
+</html>
