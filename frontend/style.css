@@ -26,8 +26,8 @@ div.login_page{
 }
 
 div.login_box{
-    width : 200px;
-    height : 240px;
+    width : 220px;
+    height : 260px;
     background-color: rgba(255, 255, 255, 0.3); 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -42,7 +42,7 @@ div.login_box{
 div.login_box h3{
     margin-top: 5px;
     margin-left: 10px;
-    margin-bottom: 20px;     /* 下方留白 */
+    margin-bottom: 30px;     /* 下方留白 */
     font-size: 24px;
 }
 
@@ -91,3 +91,25 @@ div#btn_login_right button:hover {
 }
 
 /*********************************************************/
+/* 使用者介面 */
+div.index_title h3{
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-bottom: 30px;     /* 下方留白 */
+    font-size: 24px;
+}
+
+div.personal_information{
+    width : 220px;
+    height : 260px;
+    margin-left: 20px;
+    background-color: rgba(255, 255, 255, 0.3); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px; /* 倒圓角 */
+}
