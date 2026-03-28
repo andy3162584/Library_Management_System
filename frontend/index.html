@@ -13,42 +13,83 @@
 
     <!-- 呈現在網頁上的資訊 -->
     <body>
-        <div class="index_page">
-            <!-- Title -->
-            <div class="index_title">
-                <h3>Bobok</h3>
-            </div>
+        <!-- Title -->
+        <div class="index_title">
+            <h2>Bobok</h2>
+        </div>
 
+        <div class="index_page">
             <!-- 個人資訊欄位 -->
             <div class="personal_information">
-                <h4>個人資訊</h4>
-                <div class="stat_item">
-                    <label>借閱中:</label>
-                    <span class="count">3</span>
-                </div>
-                <div class="stat_item">
-                    <label>已預約:</label>
-                    <span class="count">4</span>
-                </div>
-                <div class="stat_item">
-                    <label>借出中:</label>
-                    <span class="count">5</span>
+                <div class="profile_header">
+                    <h4>個人資訊</h4>
                 </div>
 
-                <div class="borrow_list">
-                    <label>借閱列表</label>
-                    <table>
-                        <tr>
-                            <th>書名</th>
-                            <th>借閱日期</th>
-                        </tr>
+                <div class="stats_grid">
+                    <div class="stat_item">
+                        <label>借閱中</label>
+                        <span class="count">3</span>
+                    </div>
+                    <div class="stat_item">
+                        <label>已預約</label>
+                        <span class="count">4</span>
+                    </div>
+                    <div class="stat_item">
+                        <label>待確認</label>
+                        <span class="count">4</span>
+                    </div>
+                    <div class="stat_item">
+                        <label>借出中</label>
+                        <span class="count">5</span>
+                    </div>
+                </div>
+
+                <div class="confirm_section">
+                    <label class="section_label">確認清單</label>
+                    <table class="mini_table">
+                        <thead>
+                            <tr>
+                                <th>書名</th>
+                                <th>日期</th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>微積分精裝版</td>
+                                <td>03-28</td>
+                                <td><button class="btn_confirm">借出</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="borrow_section">
+                    <label class="section_label">借閱清單</label>
+                    <table class="mini_table">
+                        <thead>
+                            <tr>
+                                <th>書名</th>
+                                <th>日期</th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>微積分精裝版</td>
+                                <td>03-28</td>
+                                <td><button class="btn_return">歸還</button></td>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
             </div>
 
-            <!-- 圖書清單欄位 -->
             <div class="book_list">
-
+                <h4>圖書列表</h4>
+                <div class="book_grid">
+                    <p style="color: #666;">圖書內容載入中...</p>
+                </div>
             </div>
         </div>
         

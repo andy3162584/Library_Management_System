@@ -92,24 +92,202 @@ div#btn_login_right button:hover {
 
 /*********************************************************/
 /* 使用者介面 */
-div.index_title h3{
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-bottom: 30px;     /* 下方留白 */
-    font-size: 24px;
+.index_title {
+    padding: 20px 40px;
+    color: #333;
 }
 
-div.personal_information{
-    width : 220px;
-    height : 260px;
-    margin-left: 20px;
-    background-color: rgba(255, 255, 255, 0.3); 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    text-align: left;
+/* 核心並排容器 */
+.index_page {
     display: flex;
-    flex-direction: column;
-    border-radius: 8px; /* 倒圓角 */
+    flex-direction: row;
+    width: 95%;
+    max-width: 1400px;
+    margin: 0 auto 40px auto; /* 居中並留底部空間 */
+    gap: 25px;                /* 區塊間距 */
+    align-items: flex-start;  /* 高度隨內容改變的關鍵 */
+}
+
+/* 通用毛玻璃卡片樣式 */
+.personal_information, .book_list {
+    background-color: rgba(255, 255, 255, 0.35); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+/* 比例分配 */
+.personal_information {
+    flex: 0 0 30%; /* 固定 30% */
+    min-height: 260px;
+}
+
+.book_list {
+    flex: 1;       /* 佔滿剩下的 70% */
+    min-height: 260px;
+}
+
+.borrow_section {
+    margin-top: 30px; /* 增加頂部間距 */
+}
+
+/* --- 個人資訊內部設計 --- */
+.profile_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background: #4A90E2;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.stats_grid {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.stat_item {
+    text-align: center;
+    flex: 1;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px 5px;
+    border-radius: 10px;
+}
+
+.stat_item label {
+    display: block;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.stat_item .count {
+    font-size: 20px;
+    font-weight: bold;
+    color: #222;
+}
+
+.section_label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #444;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.mini_table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    /* 關鍵：固定佈局讓寬度分配更精準 */
+    table-layout: fixed; 
+}
+
+/* 設定所有標題與資料的基本對齊 */
+.mini_table th, .mini_table td {
+    padding: 10px 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: left; /* 全部統一置左 */
+    color: #666;
+    vertical-align: middle;
+}
+
+/* 第一欄：書名 (佔 55%) */
+.mini_table th:nth-child(1),
+.mini_table td:nth-child(1) {
+    width: 55%;
+}
+
+/* 第二欄：日期 (佔 25%) */
+/* 這裡會確保標題與數字都對齊同一條垂直線 */
+.mini_table th:nth-child(2),
+.mini_table td:nth-child(2) {
+    width: 25%;
+}
+
+/* 第三欄：按鈕 (佔 20%) */
+/* 只有這欄維持靠右對齊，讓介面邊緣整齊 */
+.mini_table th:last-child, 
+.mini_table td:last-child {
+    width: 20%;
+    text-align: right ; 
+}
+
+/* 讓按鈕本身不要有額外的 margin，確保貼齊 */
+button {
+    margin: 0;
+}
+
+button {
+    border: none;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: 'Noto Sans TC', sans-serif;
+    transition: background 0.3s;
+    margin: 0;
+    white-space: nowrap;      /* 強制文字橫向，不換行 */
+    display: inline-flex;     /* 使用 flex 確保內容置中 */
+    align-items: center;
+    justify-content: center;
+    min-width: fit-content;   /* 寬度隨文字自動伸縮 */
+}
+
+/* 確認按鈕樣式 */
+.btn_confirm .btn_return {
+    background-color: rgba(74, 144, 226, 0.2); /* 淡藍色 */
+    color: #4A90E2;
+    border: 1px solid rgba(74, 144, 226, 0.3);
+}
+
+.btn_confirm:hover {
+    background-color: #555;
+    color: white;
+}
+
+.btn_return:hover {
+    background-color: #555;
+    color: white;
+}
+
+/* 響應式：手機版改為上下堆疊 */
+@media (max-width: 900px) {
+    
+    .index_page {
+        flex-direction: column; /* 將並排改為上下堆疊 */
+        align-items: center;    /* 讓區塊在中間對齊 */
+        width: 100%;            /* 容器佔滿全寬 */
+        padding: 0 15px;        /* 增加左右內邊距，避免卡片貼邊 */
+        box-sizing: border-box;
+    }
+
+    /* 個人資訊：縮小時改為 100% 寬度 */
+    .personal_information {
+        flex: none;             /* 取消原本的 30% 固定比例 */
+        width: 100%;            /* 寬度佔滿父容器 */
+        margin-bottom: 20px;    /* 與下方的圖書列表保持距離 */
+    }
+
+    /* 圖書列表：縮小時佔滿左右空間 */
+    .book_list {
+        flex: none;             /* 取消原本的 flex: 1 */
+        width: 100%;            /* 關鍵：左右佔滿 */
+    }
 }
